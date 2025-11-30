@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -8,14 +9,42 @@
 
         <title>{% block title %}{% endblock %}</title>
     </head>
-    <body>
+    <body class="container mt-4">
+
+        <nav>
+            <a href="#">
+                <img src="{% static 'website/img/logo.png' %}" alt="Logo guia cardume" style="max-width: 140px;">
+            </a>
+        </nav>
         
-        <main>
+        <main class=" ">
             {% block content %}
             {% endblock %}
         </main>
 
+        <footer class="text-center py-4 mt-auto fixed-bottom" role="contentinfo">
+ 
+                <p class="mb-2 small">
+                &copy; {{ now|date:"Y" }} Guia Cardume — Todos os direitos reservados.
+                </p>
 
+                <nav aria-label="Links institucionais">
+                    <ul class="list-inline mb-0 small">
+                        <li class="list-inline-item mx-2">
+                            <a href="#" class="text-decoration-none" aria-label="Política de Privacidade">Política de Privacidade</a>
+                        </li>
+
+                        <li class="list-inline-item mx-2">
+                            <a href="#" class="text-decoration-none" aria-label="Termos de Uso">Termos de Uso</a>
+                        </li>
+
+                        <li class="list-inline-item mx-2">
+                            <a href="#" class="text-decoration-none" aria-label="Fale conosco">Contato</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </footer>
 
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
